@@ -75,7 +75,8 @@ namespace Sidemash.Sdk
                 signedHeaders
                     .Add("X-Sdm-Nonce", sdmRequest.Nonce.ToString())
                     .Add("X-Sdm-SignedHeaders", string.Join(", ", signedHeaders.Keys))
-                    .Add("X-Sdm-Signature", "SHA512 " + sign(sdmRequest.ToMessage(), auth.PrivateKey)); 
+                    //.Add("X-Sdm-Signature", "SHA512 " + sign(sdmRequest.ToMessage(), auth.PrivateKey));
+                    .Add("X-Sdm-Signature", "SHA512 " + sign(sdmRequest.ToMessage(), auth.SecretKey));
             
             
             using (var client = new HttpClient())

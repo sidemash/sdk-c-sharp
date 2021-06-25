@@ -10,7 +10,8 @@ namespace Example
     {
         static void Main(string[] args)
         {
-            Auth auth = new Auth(token: "1234", privateKey: "****");
+            //Auth auth = new Auth(token: "1234", privateKey: "****");
+            Auth auth = new Auth(token: "1234", secretKey: "****");
             Client client = new Client(auth);
             //Task<Domain> createDomain = client.Domain.Create(new CreateDomainForm("example69990.com", DomainPurpose.Play, Some("My example domain name"), None)); 
             Task<StreamSquare> task = 
